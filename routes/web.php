@@ -20,6 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //route uuntuk admin role
-Route::get('/admin/home', 'HomeController@admin')->name('admin.home');
+Route::get('/admin/home', 'HomeController@admin')->middleware('role:admin')->name('admin.home');
 Route::get('/admin/register', 'Auth\RegisterAdminController@index')->name('admin.register');
 Route::post('/admin/register', 'Auth\RegisterAdminController@register')->name('admin.register.post');
